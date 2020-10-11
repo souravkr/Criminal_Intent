@@ -83,6 +83,8 @@ class CrimeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
+      //  context?.let { CrimeLab.buidDatabase(it) }
+
         Log.i(TAG,"CrimeListFragment Inflated")
         dataBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_crime_list,container,false)
         dataBinding.crimeRecyclerView.layoutManager = LinearLayoutManager(activity)
@@ -104,7 +106,7 @@ class CrimeListFragment : Fragment() {
 
     fun updateUI(){
 
-        CrimeLab.context1 = this!!.context!!
+      //  CrimeLab.context1 = this.context!!
        var crimes = CrimeLab.mCrimes
 
         dataBinding.createNewButton.visibility = if(crimes.size == 0) View.VISIBLE else View.GONE
