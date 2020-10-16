@@ -66,7 +66,8 @@ class CrimeListFragment : Fragment() {
 
     private fun createIntent(): Intent {
         var crime = Crime()
-        CrimeLab.mCrimes.add(crime)
+        CrimeLab.addCrime(crime)
+        //CrimeLab.mCrimes.add(crime)
         var intent: Intent = Intent(context, CrimePagerActivity::class.java)
         intent.putExtra("EXTRA_CRIME_ID", crime.mId)
         return intent

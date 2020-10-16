@@ -34,6 +34,10 @@ class CrimeFragment : Fragment() {
         }
     }
 
+    override fun onPause() {
+        super.onPause()
+        CrimeLab.updateCrime(mCrimeObj)
+    }
 
     //This is called when the fragment return from some other fragment "Target Fragment"
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -151,10 +155,7 @@ class CrimeFragment : Fragment() {
 
         })
 
-        binding.buttonLeft.setOnClickListener {
 
-            CrimeFragment.newInstance(CrimeLab.mCrimes[0].mId)
-        }
 
         return binding.root
 

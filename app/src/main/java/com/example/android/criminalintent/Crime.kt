@@ -2,11 +2,16 @@ package com.example.android.criminalintent
 
 import java.util.*
 
-class Crime{
+class Crime(){
 
     var mSolved:Boolean = false
     var mTitle: String = ""
     var mDate:Date = Date()
     var mId: UUID = UUID.randomUUID()
+
+    constructor(id:UUID) : this() {
+        mId = id
+        mDate = Date()
+    }
 
 }
